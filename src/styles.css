@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Roboto', sans-serif;
+     background: #1e2831;
+     background: linear-gradient( to top right, #1e2831, #25313a, #384d58 );
+     background: -o-linear-gradient(top right, #1e2831, #25313a, #384d58 );
+     background: -moz-linear-gradient(top right, #1e2831, #25313a, #384d58 );
+     background: linear-gradient(to top right, #1e2831, #25313a, #384d58 );
+    font-size: 15px;
+  }
+
+  html {
+    min-height: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }

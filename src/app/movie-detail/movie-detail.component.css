@@ -1,0 +1,72 @@
+img.movie-poster {
+    width: 400px;
+    height: 500px;
+    outline: 2px;
+    outline: 1px solid #00838F;
+    outline-offset: 13px;
+    margin-top: 30px;
+}
+
+.movie-page-info {
+    width: 100%;
+    margin-left: 50px;
+}
+
+.movie-page-info .movie-info-top {
+    margin-bottom: 15px;
+}
+
+.movie-page-info .movie-info-top:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.movie-page .movie-title {
+    color: #9aa3a9;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    width: 50%;
+    float: left;
+    padding-top: 15px;
+}
+.movie-page {
+    max-width: 60%;
+    margin: 100px auto;
+    display: flex;
+}
+.movie-page-info-content {
+    margin: 30px 0 0;
+    max-width: 70%;
+}
+
+
+.movie-page p {
+    color: #F4F6F0;
+    padding: 30px 0 200px;
+    line-height: 25px;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 100;
+}
+
+.movie-page-info h3 {
+    color: #00838F;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    padding: 5px 0 2px;
+}
+
+.movie-page-info span {
+    color: #9aa3a9;
+    font-weight: 100;
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.movie-page-info span:hover {
+    color: #F4F6F0;
+}
