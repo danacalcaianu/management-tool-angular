@@ -1,3 +1,4 @@
+<div class="body">
 <div class="movie-container">
   <div class="movie" *ngFor="let movie of movies">
     <a routerLink="/detail/{{movie.id}}"><h1 class="title"> {{movie.title}} </h1></a>
@@ -7,4 +8,5 @@
       <p class="description"> Description: {{movie.description}} </p>
     </div>
   </div>
+</div>
 </div>

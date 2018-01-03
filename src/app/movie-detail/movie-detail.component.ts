@@ -22,7 +22,7 @@ export class MovieDetailComponent implements OnInit {
     this.MoviesService.getMovie(id).subscribe(movie => {
       if(movie !==undefined){
         console.log(movie);
-        return this.movie = movie;
+        return this.movie = movie["payload"];
       } 
     })
   }

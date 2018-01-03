@@ -37,10 +37,9 @@ input{
 .search-result {
     position: absolute;
     width: 405px;
-    background-color:whitesmoke;
+    background-color:rgba(245, 245, 245, 0.849);
     color: #3a4250;
     line-height: 2em;
-    border:2px solid #00838F;
 }
 
 .search-result ul {

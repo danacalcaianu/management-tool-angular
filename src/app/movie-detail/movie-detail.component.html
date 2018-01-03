@@ -1,25 +1,25 @@
-<div *ngIf="movie" class="movie-page">
-  <img *ngIf="movie.payload.picture" [src]=movie.payload.picture class="movie-poster">
-  <img *ngIf="!movie.payload.picture" src="../assets/default-poster.png" class="movie-poster">
-  <div class="movie-page-info">
-    <div class="movie-info-top">
-      <h2 class="movie-title">
-        {{movie.payload.title}}
-      </h2>
-    </div>
-    <div class="movie-page-info-content">
-      <p>{{movie.payload.description}}</p>
-      <h3>Categories:
-        <span> {{ movie.payload.categories }}</span>
-      </h3>
-      <!-- <h3>Director:
-          <span> { director }</span>
+<div class="body">
+  <div *ngIf="movie" class="movie-page">
+    <img *ngIf="movie.picture" [src]=movie.picture class="movie-poster">
+    <img *ngIf="!movie.picture" src="../assets/default-poster.png" class="movie-poster">
+    <div class="movie-page-info">
+      <div class="movie-info-top">
+        <h2 class="movie-title">
+          {{movie.title}}
+        </h2>
+      </div>
+      <div class="movie-page-info-content">
+        <p>{{movie.description}}</p>
+        <h3>Categories:
+          <span> {{ movie.categories }}</span>
+        </h3>
+        <h3>Director:
+          <span> {{ movie.director || "N/A"}} </span>
         </h3>
         <h3>Cast:
-          <span> { cast && cast.length === 0 ? cast.join( ", " ) : "" }
-          </span>
+          <span> {{ movie.cast && movie.cast.length > 0 ? movie.cast.join( ", " ) : "N/A" }}</span>
         </h3>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>
