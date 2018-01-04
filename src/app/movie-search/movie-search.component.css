@@ -16,6 +16,7 @@ input{
 }
 .wrapper{
     display: flex;
+    height: 43px;
 
 }
 .wrapper button{

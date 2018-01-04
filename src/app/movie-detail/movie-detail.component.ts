@@ -18,7 +18,6 @@ export class MovieDetailComponent implements OnInit {
     
   }
   getMovie(id) {
-    console.log("here")
     this.MoviesService.getMovie(id).subscribe(movie => {
       if(movie !==undefined){
         console.log(movie);

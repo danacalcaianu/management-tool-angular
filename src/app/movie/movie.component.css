@@ -7,22 +7,22 @@ p {
 }
 
 .movie {
-    width: 350px;
-    padding: 0 40px;
-    outline: 1px solid rgba(92, 92, 92, 0.281);
+    width: 300px;
+    /* padding: 0 40px; */
+    /* outline: 1px solid rgba(92, 92, 92, 0.281); */
     margin-top: 1px;
     margin-left: 1px;
 }
 
-.movie:hover{
+/* .movie:hover{
     background-color: rgba(255, 255, 255, 0.034);
-}
+} */
 
 .movie-container {
     padding-top:70px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .movie-info{
@@ -54,4 +54,5 @@ p {
 
 .description {
     margin-left:20px;
+    font-size: 13px;
 }

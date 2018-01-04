@@ -13,7 +13,7 @@ export class MovieComponent implements OnInit {
   constructor(private MoviesService: MoviesService) { }
   movies : Movie[];
   page: number =1;
-  windowSize: number = 600;
+  windowSize: number = 200;
 
   getMovies(page): void {
     this.MoviesService.getMovies(page).subscribe(movies => {
@@ -29,10 +29,12 @@ export class MovieComponent implements OnInit {
   @HostListener('window:scroll', ['$event']) onScroll(event: Event) { 
     console.log("Scrolled!"); 
     console.log(this.movies); 
+    console.log(window.innerHeight)
+    console.log(window.pageYOffset)
     if(window.pageYOffset>this.windowSize){
       this.getMovies(this.page);
       this.page++;
-      this.windowSize+=1200
+      this.windowSize+=600
     }
   }
 }

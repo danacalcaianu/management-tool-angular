@@ -1,5 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
 img.movie-poster {
-    width: 400px;
+    /* width: 400px; */
     height: 500px;
     outline: 2px;
     outline: 1px solid #00838F;
