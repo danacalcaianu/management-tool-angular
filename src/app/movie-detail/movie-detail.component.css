@@ -4,8 +4,8 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
 img.movie-poster {
-    /* width: 400px; */
     height: 500px;
     outline: 2px;
     outline: 1px solid #00838F;
@@ -37,13 +37,14 @@ img.movie-poster {
     float: left;
     padding-top: 15px;
 }
+
 .movie-page {
     max-width: 60%;
     margin: 100px auto;
     display: flex;
 }
 
-.body{
+.body {
     border-top: 1px solid #00838F;
 }
 

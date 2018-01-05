@@ -11,20 +11,26 @@ import { MoviesService } from '../movies.service';
 @Component({
   selector: 'app-movie-search',
   templateUrl: './movie-search.component.html',
-  styleUrls: ['./movie-search.component.css']
+  styleUrls: ['./movie-search.component.css'],
+  host: {
+    '(document:click)': 'onClick($event)',
+  },
 })
 export class MovieSearchComponent implements OnInit {
   movies: Movie[] = [];
-  movies$: Observable<Movie[]>;
-  visible = false;
+
   private searchTerms = new Subject<string>();
 
   constructor(private moviesService: MoviesService) { }
 
   search(term: string): void {
-
     this.searchTerms.next(term);
   }
+
+  onClick(e){
+    this.movies = [];
+  }
+
   ngOnInit(): void {
     this.searchTerms
       .debounceTime(300)

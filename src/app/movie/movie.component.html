@@ -5,8 +5,9 @@
     <div class="movie-info">
       <img *ngIf="movie.picture" [src]=movie.picture>
       <img *ngIf="!movie.picture" src="../assets/default-poster.png">
-      <p class="description"> Description: {{movie.description}} </p>
     </div>
+    <p class="description"> Description: {{movie.description}} </p>
   </div>
+  <div *ngIf="!movies" class="error">No movies available at the moment.</div>
 </div>
 </div>

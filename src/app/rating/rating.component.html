@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="rating-info" *ngIf="movie.averageRating; else notRated">
+    <img class="rating-star" src="../assets/golden-star.png">
+    <div class="rating-average">{{movie.averageRating}}</div>
+  </div>
+  <ng-template #notRated><div class="notRated">Not Rated Yet!</div></ng-template>
+
+  <div class="rating-container">
+    <img class="rating-star" src="../assets/hollow-star.png" (click)="rateMovie()">
+    <div class="rate-now">Rate This!</div>
+  </div>
+
+  <div *ngIf="visible" class="rating-grid">
+      <img class="rating-star" [src]="imgSrc[0]" (mouseover)="colorStar(1)" (mouseout)="clearStars()" (click)="giveStars(1)">
+      <img class="rating-star" [src]="imgSrc[1]" (mouseover)="colorStar(2)" (mouseout)="clearStars()" (click)="giveStars(2)">
+      <img class="rating-star" [src]="imgSrc[2]" (mouseover)="colorStar(3)" (mouseout)="clearStars()" (click)="giveStars(3)">
+      <img class="rating-star" [src]="imgSrc[3]" (mouseover)="colorStar(4)" (mouseout)="clearStars()" (click)="giveStars(4)">
+      <img class="rating-star" [src]="imgSrc[4]" (mouseover)="colorStar(5)" (mouseout)="clearStars()" (click)="giveStars(5)">
+  </div>
+</div>

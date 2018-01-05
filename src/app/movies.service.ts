@@ -21,13 +21,20 @@ export class MoviesService {
     }
     return this.http.get<any>(`http://localhost:3030/movies/getAll/${term}`).pipe(
       tap(_ => console.log(`found movies matching "${term}"`)),
-      map((result)=>result.payload),
+      map((result) => result.payload),
       catchError(this.handleError<any>('searchMovies', []))
     );
   }
 
-  getMovie(id: string): Observable<Movie[]>{
+  getMovie(id: string): Observable<Movie[]> {
     return this.http.get<any>(`http://localhost:3030/movies/${id}/getMovie`);
+  }
+
+  rateMovie(movieId, rate) {
+    const userId = "qxg3w1d0ea" //login not implemented yet
+    const body = { "rating": rate };
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.put<any>(`http://localhost:3030/users/${userId}/rateMovie/${movieId}`, body, { headers: headers });
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

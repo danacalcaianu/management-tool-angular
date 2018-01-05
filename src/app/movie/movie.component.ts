@@ -13,7 +13,7 @@ export class MovieComponent implements OnInit {
   constructor(private MoviesService: MoviesService) { }
   movies : Movie[];
   page: number =1;
-  windowSize: number = 200;
+  windowSize: number = window.innerHeight / 2;
 
   getMovies(page): void {
     this.MoviesService.getMovies(page).subscribe(movies => {
@@ -34,7 +34,7 @@ export class MovieComponent implements OnInit {
     if(window.pageYOffset>this.windowSize){
       this.getMovies(this.page);
       this.page++;
-      this.windowSize+=600
+      this.windowSize+=1000
     }
   }
 }

@@ -4,21 +4,14 @@
     <img *ngIf="!movie.picture" src="../assets/default-poster.png" class="movie-poster">
     <div class="movie-page-info">
       <div class="movie-info-top">
-        <h2 class="movie-title">
-          {{movie.title}}
-        </h2>
+        <h2 class="movie-title">{{movie.title}}</h2>
+        <app-rating [movie]="movie" ></app-rating>
       </div>
       <div class="movie-page-info-content">
         <p>{{movie.description}}</p>
-        <h3>Categories:
-          <span> {{ movie.categories }}</span>
-        </h3>
-        <h3>Director:
-          <span> {{ movie.director || "N/A"}} </span>
-        </h3>
-        <h3>Cast:
-          <span> {{ movie.cast && movie.cast.length > 0 ? movie.cast.join( ", " ) : "N/A" }}</span>
-        </h3>
+        <h3>Categories:<span> {{ movie.categories }}</span></h3>
+        <h3>Director:<span> {{ movie.director || "N/A"}} </span></h3>
+        <h3>Cast:<span> {{ movie.cast && movie.cast.length > 0 ? movie.cast.join( ", " ) : "N/A" }}</span></h3>
       </div>
     </div>
   </div>

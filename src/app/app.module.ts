@@ -12,7 +12,8 @@ import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
-
+import { RatingComponent } from './rating/rating.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,12 +23,14 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     HeaderComponent,
     MovieSearchComponent,
     HomeComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]
