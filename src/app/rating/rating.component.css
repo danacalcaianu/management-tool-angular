@@ -52,7 +52,12 @@
 
 .rating-grid {
     position: absolute;
-    left:0;
+    /* left:0px; */
+    top: -3px;
+    left:-178px;
     background-color: rgb(145, 145, 145);
     cursor: pointer;
+}
+.test{
+    position: relative;
 }
