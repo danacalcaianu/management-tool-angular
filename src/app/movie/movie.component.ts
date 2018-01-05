@@ -27,14 +27,10 @@ export class MovieComponent implements OnInit {
     this.getMovies(0);
   }
   @HostListener('window:scroll', ['$event']) onScroll(event: Event) { 
-    console.log("Scrolled!"); 
-    console.log(this.movies); 
-    console.log(window.innerHeight)
-    console.log(window.pageYOffset)
     if(window.pageYOffset>this.windowSize){
       this.getMovies(this.page);
       this.page++;
-      this.windowSize+=1000
+      this.windowSize+=window.innerHeight
     }
   }
 }

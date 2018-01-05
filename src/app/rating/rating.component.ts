@@ -9,7 +9,7 @@ import { MoviesService } from '../movies.service';
 export class RatingComponent implements OnInit {
   visible = false
   i: number = 0;
-  imgSrc = [];
+  imgSrc = ["","","","",""];
 
   constructor(private moviesService: MoviesService) { }
 
@@ -20,10 +20,7 @@ export class RatingComponent implements OnInit {
 
   rateMovie() {
     this.visible = !this.visible;
-    while (this.i < 5) {
-      this.imgSrc[this.i] = "../assets/hollow-star.png";
-      this.i++;
-    }
+    this.imgSrc = this.imgSrc.map(item=> item = "../assets/hollow-star.png")
   }
 
   giveStars(rate) {
@@ -32,7 +29,6 @@ export class RatingComponent implements OnInit {
   }
 
   colorStar(n) {
-    this.i = 0;
     while (this.i < n) {
       this.imgSrc[this.i] = "../assets/golden-star.png";
       this.i++;
@@ -41,11 +37,7 @@ export class RatingComponent implements OnInit {
   }
 
   clearStars() {
-    this.i = 0;
-    while (this.i < 5) {
-      this.imgSrc[this.i] = "../assets/hollow-star.png";
-      this.i++;
-    }
+    this.imgSrc = this.imgSrc.map(item=> item = "../assets/hollow-star.png")
   }
 
 }
