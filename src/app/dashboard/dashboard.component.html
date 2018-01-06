@@ -1,3 +1,15 @@
-<p>
-  dashboard works!
-</p>
+<div class="body">
+  <div class="projects-container">
+    <div class="project" *ngFor="let project of projects">
+      <p class="title">Project: {{project.title}}</p>
+      <p class="description">Description: {{project.description}}</p>
+      <div class="sprints" *ngIf="project.sprints.length !== 0; else noSprints">Sprints:
+        <p *ngFor="let sprint of project.sprints">-{{sprint.title}}</p>
+      </div>
+      <ng-template #noSprints>
+          <div class="noSprints">No Sprints Yet!</div>
+      </ng-template>
+    </div>
+    <div *ngIf="!projects" class="error">No projects available at the moment.</div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import{ ProjectService } from "../services/index"
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor( private ProjectService : ProjectService ) { }
+
+  projects;
 
   ngOnInit() {
+    this.getProjects();
+  }
+
+  getProjects(): void {
+    this.ProjectService.getProjects().subscribe(projects => {
+      if(this.projects !==undefined){
+        return this.projects = this.projects.concat(projects['payload'])
+      } else{ 
+        return this.projects = projects['payload']}
+      });
   }
 
 }
