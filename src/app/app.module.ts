@@ -11,9 +11,12 @@ import { HeaderComponent } from './header/header.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { RatingComponent } from './rating/rating.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { AuthenticationService, AlertService, UserService} from "./services/index";
+import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component'
 
 @NgModule({
   declarations: [
@@ -23,8 +26,10 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     MovieSearchComponent,
     HomeComponent,
-    MovieDetailComponent,
-    RatingComponent
+    RatingComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [MoviesService],
+  providers: [MoviesService,AuthenticationService, AlertService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

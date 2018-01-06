@@ -31,7 +31,7 @@ export class MoviesService {
   }
 
   rateMovie(movieId, rate) {
-    const userId = "qxg3w1d0ea" //login not implemented yet
+    const userId = "la5klmc09l" //login not implemented yet
     const body = { "rating": rate };
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.put<any>(`http://localhost:3030/users/${userId}/rateMovie/${movieId}`, body, { headers: headers });

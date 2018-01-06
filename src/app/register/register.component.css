@@ -1,0 +1,15 @@
+.form-group, h2 {
+    color:#F4F6F0;
+    font-family: 'Roboto';
+    font-weight: 100;
+}
+
+.btn-primary{
+    background-color: #00838F;
+
+}
+
+.btn-primary:hover{
+    background-color: #00838F;
+
+}
