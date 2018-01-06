@@ -1,7 +1,7 @@
 <div class="body">
   <div class="projects-container">
     <div class="project" *ngFor="let project of projects">
-      <p class="title">Project: {{project.title}}</p>
+      <a routerLink="/detail/{{project.id}}"><p class="title">Project: {{project.title}}</p></a>
       <p class="description">Description: {{project.description}}</p>
       <div class="sprints" *ngIf="project.sprints.length !== 0; else noSprints">Sprints:
         <p *ngFor="let sprint of project.sprints">-{{sprint.title}}</p>

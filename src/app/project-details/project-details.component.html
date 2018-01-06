@@ -1,0 +1,20 @@
+<div class="wrapper">
+<p>Current Project: {{project.title}} with {{project.sprints.length}} sprint/s</p>
+  <div class="sprints">
+    <div *ngIf="project.sprints.length !== 0; else noSprints">
+      <div class="sprint" *ngFor="let sprint of project.sprints">
+        <div class="sprint-header">
+          <h1>{{sprint.title}}</h1>
+          <div class="icons">
+            <img src="../assets/edit-icon.png" class="icon">
+            <img src="../assets/delete-icon.png" class="icon">
+          </div>
+        </div>
+        <p>{{sprint.description}}</p>
+      </div>
+    </div>
+    <ng-template #noSprints>
+        <div class="noSprints">No Sprints Yet!</div>
+    </ng-template>
+  </div>
+</div>

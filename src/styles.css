@@ -6,6 +6,7 @@ body {
      background: -moz-linear-gradient(top right, #1e2831, #25313a, #384d58 );
      background: linear-gradient(to top right, #1e2831, #25313a, #384d58 );
     font-size: 15px;
+    color:white;
   }
 
   html {
@@ -17,3 +18,6 @@ body {
     display: block;
     color:inherit
   }
+  a:hover{
+    text-decoration: none;
+}
