@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../services/index';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-project-details',
   templateUrl: './project-details.component.html',
@@ -9,7 +9,7 @@ import { ProjectService } from '../services/index';
 })
 export class ProjectDetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private ProjectService:ProjectService) { }
+  constructor(private route: ActivatedRoute, private ProjectService:ProjectService, private router: Router,) { }
   project;
 
   ngOnInit() {
@@ -17,6 +17,12 @@ export class ProjectDetailsComponent implements OnInit {
     this.getProject(id) 
   }
   getProject(id) {
-    this.ProjectService.getProject(id).subscribe(project =>  this.project = project["payload"] ) }
+    this.ProjectService.getProject(id).subscribe(project =>  this.project = project["payload"] ) 
+  }
+
+  removeSprint(sprintId) {
+    console.log(sprintId)
+    this.ProjectService.deleteSprint(this.project.id,sprintId).subscribe(res=>location.reload())
+  }
 
 }

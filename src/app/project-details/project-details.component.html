@@ -1,5 +1,5 @@
 <div class="wrapper">
-<p>Current Project: {{project.title}} with {{project.sprints.length}} sprint/s</p>
+  <p>Current Project: {{project.title}} with {{project.sprints.length}} sprint/s</p>
   <div class="sprints">
     <div *ngIf="project.sprints.length !== 0; else noSprints">
       <div class="sprint" *ngFor="let sprint of project.sprints">
@@ -7,14 +7,22 @@
           <h1>{{sprint.title}}</h1>
           <div class="icons">
             <img src="../assets/edit-icon.png" class="icon">
-            <img src="../assets/delete-icon.png" class="icon">
+            <img src="../assets/delete-icon.png" class="icon" (click)="removeSprint(sprint.id)">
           </div>
         </div>
-        <p>{{sprint.description}}</p>
+        <p class="description">{{sprint.description}}</p>
+        <p>There are currently issues from which:</p>
+        <div class="issues-table">
+          <div class="issue-type">New</div>
+          <div class="issue-type">In progress</div>
+          <div class="issue-type">Feedback</div>
+          <div class="issue-type">Rework</div>
+          <div class="issue-type">Resolved</div>
+        </div>
       </div>
     </div>
-    <ng-template #noSprints>
-        <div class="noSprints">No Sprints Yet!</div>
-    </ng-template>
   </div>
+  <ng-template #noSprints>
+    <div class="noSprints">No Sprints Yet!</div>
+  </ng-template>
 </div>
