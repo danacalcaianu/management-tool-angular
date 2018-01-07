@@ -11,14 +11,7 @@
           </div>
         </div>
         <p class="description">{{sprint.description}}</p>
-        <p>There are currently issues from which:</p>
-        <div class="issues-table">
-          <div class="issue-type">New</div>
-          <div class="issue-type">In progress</div>
-          <div class="issue-type">Feedback</div>
-          <div class="issue-type">Rework</div>
-          <div class="issue-type">Resolved</div>
-        </div>
+        <app-issues [sprint]="sprint" [project]="project" ></app-issues>
       </div>
     </div>
   </div>

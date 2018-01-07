@@ -17,8 +17,13 @@ export class ProjectService {
   getProject(id: string) {
     return this.http.get<any>(`http://localhost:3030/projects/${id}/getProject`);
   }
+
   deleteSprint( projectId, sprintId ) {
     return this.http.delete<any>(`http://localhost:3030/users/${projectId}/removeSprint/${sprintId}`);
+  }
+
+  getIssues( projectId, sprintId ) {
+    return this.http.get<any>(`http://localhost:3030/projects/${ projectId }/getIssuesForSprint/${ sprintId }`);
   }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

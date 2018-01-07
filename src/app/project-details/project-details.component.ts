@@ -11,10 +11,11 @@ export class ProjectDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private ProjectService:ProjectService, private router: Router,) { }
   project;
+  issues;
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.getProject(id) 
+    this.getProject(id)
   }
   getProject(id) {
     this.ProjectService.getProject(id).subscribe(project =>  this.project = project["payload"] ) 

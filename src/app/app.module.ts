@@ -13,6 +13,7 @@ import { AuthenticationService, AlertService, UserService,ProjectService} from "
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { IssuesComponent } from './issues/issues.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     RegisterComponent,
     DashboardComponent,
     ProjectDetailsComponent,
+    IssuesComponent,
   ],
   imports: [
     BrowserModule,

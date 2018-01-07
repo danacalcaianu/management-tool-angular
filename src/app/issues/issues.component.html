@@ -1,0 +1,119 @@
+<p>There are currently {{issues.length}} issues from which:</p>
+
+<div *ngIf="issues">
+  <div class="issues-table">
+    <div class="issue-type">New
+      <div *ngFor="let issue of issues" class="issue-list">
+          <div *ngIf="issue.status=='new'" [class]="issue.type">
+            <p class="title">{{issue.title}}</p>
+            <p class="description">{{issue.description}}</p>
+            <p class="date">Created at: {{issue.createdAt}}</p>
+            <p class="date">Updated at: {{issue.updatedAt}}</p>
+            <p>Created by: {{issue.createdBy}}</p>
+            <p>Assignee: {{issue.assignee}}</p>
+          </div>
+      </div>
+    </div>
+    <div class="issue-type">In progress
+        <div *ngFor="let issue of issues" class="issue-list">
+            <div *ngIf="issue.status=='in progress'" [class]="issue.type">
+              <p class="title">{{issue.title}}</p>
+              <p class="description">{{issue.description}}</p>
+              <p class="date">Created at: {{issue.createdAt}}</p>
+              <p class="date">Updated at: {{issue.updatedAt}}</p>
+              <p>Created by: {{issue.createdBy}}</p>
+              <p>Assignee: {{issue.assignee}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="issue-type">Feedback
+        <div *ngFor="let issue of issues" class="issue-list">
+            <div *ngIf="issue.status=='feedback'" [class]="issue.type">
+              <p class="title">{{issue.title}}</p>
+              <p class="description">{{issue.description}}</p>
+              <p class="date">Created at: {{issue.createdAt}}</p>
+              <p class="date">Updated at: {{issue.updatedAt}}</p>
+              <p>Created by: {{issue.createdBy}}</p>
+              <p>Assignee: {{issue.assignee}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="issue-type">Rework
+        <div *ngFor="let issue of issues" class="issue-list">
+            <div *ngIf="issue.status=='rework'" [class]="issue.type">
+              <p class="title">{{issue.title}}</p>
+              <p class="description">{{issue.description}}</p>
+              <p class="date">Created at: {{issue.createdAt}}</p>
+              <p class="date">Updated at: {{issue.updatedAt}}</p>
+              <p>Created by: {{issue.createdBy}}</p>
+              <p>Assignee: {{issue.assignee}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="issue-type">Resolved
+        <div *ngFor="let issue of issues" class="issue-list">
+            <div *ngIf="issue.status=='resolved'" [class]="issue.type">
+              <p class="title">{{issue.title}}</p>
+              <p class="description">{{issue.description}}</p>
+              <p class="date">Created at: {{issue.createdAt}}</p>
+              <p class="date">Updated at: {{issue.updatedAt}}</p>
+              <p>Created by: {{issue.createdBy}}</p>
+              <p>Assignee: {{issue.assignee}}</p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- <div *ngFor="let issue of issues" class="issue-list">
+      <div class="issue-type">
+        <div *ngIf="issue.status=='new'" [class]="issue.type">
+            {{putHtml()}}
+            <p class="title">{{issue.title}}</p>
+            <p class="description">{{issue.description}}</p>
+            <p class="date">Created at: {{issue.createdAt}}</p>
+            <p class="date">Updated at: {{issue.updatedAt}}</p>
+            <p>Created by: {{issue.createdBy}}</p>
+            <p>Assignee: {{issue.assignee}}</p>
+        </div>
+      </div>
+      <div class="issue-type">
+        <div *ngIf="issue.status=='in progress'" [class]="issue.type">
+            <p class="title">{{issue.title}}</p>
+            <p class="description">{{issue.description}}</p>
+            <p class="date">Created at: {{issue.createdAt}}</p>
+            <p class="date">Updated at: {{issue.updatedAt}}</p>
+            <p>Created by: {{issue.createdBy}}</p>
+            <p>Assignee: {{issue.assignee}}</p>
+        </div>
+      </div>
+      <div class="issue-type">
+        <div *ngIf="issue.status=='feedback'" [class]="issue.type">
+            <p class="title">{{issue.title}}</p>
+            <p class="description">{{issue.description}}</p>
+            <p class="date">Created at: {{issue.createdAt}}</p>
+            <p class="date">Updated at: {{issue.updatedAt}}</p>
+            <p>Created by: {{issue.createdBy}}</p>
+            <p>Assignee: {{issue.assignee}}</p>
+        </div>
+      </div>
+      <div class="issue-type">
+        <div *ngIf="issue.status=='rework'" [class]="issue.type">
+            <p class="title">{{issue.title}}</p>
+            <p class="description">{{issue.description}}</p>
+            <p class="date">Created at: {{issue.createdAt}}</p>
+            <p class="date">Updated at: {{issue.updatedAt}}</p>
+            <p>Created by: {{issue.createdBy}}</p>
+            <p>Assignee: {{issue.assignee}}</p>
+        </div>
+      </div>
+      <div class="issue-type">
+        <div *ngIf="issue.status=='resolved'" [class]="issue.type">
+            <p class="title">{{issue.title}}</p>
+            <p class="description">{{issue.description}}</p>
+            <p class="date">Created at: {{issue.createdAt}}</p>
+            <p class="date">Updated at: {{issue.updatedAt}}</p>
+            <p>Created by: {{issue.createdBy}}</p>
+            <p>Assignee: {{issue.assignee}}</p>
+        </div>
+      </div>
+    </div> -->
+</div>

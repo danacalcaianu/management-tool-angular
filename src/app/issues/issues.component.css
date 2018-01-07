@@ -1,0 +1,54 @@
+.issues-table {
+    margin:30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.issue-type{
+    flex:1;
+    text-align: start;
+    border:1px solid rgba(167, 167, 167, 0.19);
+}
+
+.issue-list{
+    /* margin-bottom:10px; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.bug, .feature, .task{
+    margin: 20px 0;
+}
+
+.bug{
+    border-left: 8px solid #AE1515;
+    border-bottom: 1px solid #AE1515;
+    background-color: rgba(255, 0, 0, 0.09);
+}
+
+.feature{
+    border-left: 8px solid #03263E;
+    border-bottom: 1px solid #03263E;
+    background-color: rgba(19, 70, 241, 0.06);
+}
+
+.task{
+    border-left: 8px solid rgb(31, 82, 55);
+    border-bottom: 1px solid rgb(31, 82, 55);
+    background-color: rgba(9, 107, 32, 0.21);
+}
+
+.title{
+    font-size:1.4em;
+    border-bottom: 1px solid grey;
+    text-align: center;
+}
+
+.description{
+    font-style: italic;
+}
+
+.date{
+    color:grey;
+    font-size:0.8em;
+}
