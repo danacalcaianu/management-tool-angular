@@ -25,6 +25,11 @@ export class ProjectService {
   getIssues( projectId, sprintId ) {
     return this.http.get<any>(`http://localhost:3030/projects/${ projectId }/getIssuesForSprint/${ sprintId }`);
   }
+
+  addProject(){
+    //not implemented yet!
+    return this.http.get<any>(`http://localhost:3030/users/007ffovmad/addProject`);
+  }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.log(`${operation} failed: ${error.message}`);

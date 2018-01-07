@@ -7,35 +7,48 @@
 .issue-type{
     flex:1;
     text-align: start;
-    border:1px solid rgba(167, 167, 167, 0.19);
+    border:1px solid rgba(167, 167, 167, 0.09);
 }
 
 .issue-list{
     /* margin-bottom:10px; */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .bug, .feature, .task{
     margin: 20px 0;
+    cursor: pointer;
 }
 
 .bug{
     border-left: 8px solid #AE1515;
     border-bottom: 1px solid #AE1515;
-    background-color: rgba(255, 0, 0, 0.09);
+    background-color: rgba(255, 0, 0, 0.03);
 }
 
 .feature{
     border-left: 8px solid #03263E;
     border-bottom: 1px solid #03263E;
-    background-color: rgba(19, 70, 241, 0.06);
+    background-color: rgba(19, 70, 241, 0.03);
 }
 
 .task{
     border-left: 8px solid rgb(31, 82, 55);
     border-bottom: 1px solid rgb(31, 82, 55);
-    background-color: rgba(9, 107, 32, 0.21);
+    background-color: rgba(9, 107, 32, 0.05);
+}
+
+.bug:hover{
+    background-color: rgba(255, 0, 0, 0.28);
+}
+
+.feature:hover{
+    background-color: rgba(19, 70, 241, 0.19);
+}
+
+.task:hover{
+    background-color: rgba(9, 107, 32, 0.43);;
 }
 
 .title{
@@ -51,4 +64,9 @@
 .date{
     color:grey;
     font-size:0.8em;
+}
+
+.issue-type p:first-of-type{
+    font-size: 1.3em;
+    text-align: center;
 }

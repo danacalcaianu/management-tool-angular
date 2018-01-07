@@ -11,6 +11,8 @@ export class DashboardComponent implements OnInit {
   constructor( private ProjectService : ProjectService ) { }
 
   projects;
+  visible;
+  model={};
 
   ngOnInit() {
     this.getProjects();
@@ -23,6 +25,15 @@ export class DashboardComponent implements OnInit {
       } else{ 
         return this.projects = projects['payload']}
       });
+  }
+
+  addProject() {
+    console.log(this.model)
+    this.ProjectService.addProject().subscribe(project=>console.log(project));
+  }
+
+  toggleVisibility(){
+    this.visible= !this.visible;
   }
 
 }
