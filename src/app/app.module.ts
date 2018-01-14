@@ -16,6 +16,8 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { IssuesComponent } from './issues/issues.component';;
 import { ProjectFormComponent } from './project-form/project-form.component';
 import { IssueDetailComponent } from './issue-detail/issue-detail.component';
+import { IssueFormComponent } from './issue-form/issue-form.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { IssueDetailComponent } from './issue-detail/issue-detail.component';
     IssuesComponent,
     ProjectFormComponent,
     IssueDetailComponent,
+    IssueFormComponent,
+    EditFormComponent,
   ],
   imports: [
     BrowserModule,

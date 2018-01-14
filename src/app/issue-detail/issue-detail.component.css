@@ -1,5 +1,26 @@
 .wrapper {
     background-color: #0A0B0C;
-    margin: 10px 60px;
-    padding: 20px;
+    margin: 50px 100px;
+    padding: 30px;
+}
+
+.icon{
+    width:50px;
+    height: 50px;
+    cursor: pointer;
+}
+.icons{
+    display: flex;
+   justify-content: space-between;
+   margin-bottom:20px;
+}
+
+.form-container{
+    width: 500px;
+    position: fixed;
+    top:20%;
+    background-color: #464646;
+    left:30%;
+    border:1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
 }

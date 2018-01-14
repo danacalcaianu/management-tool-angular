@@ -1,19 +1,22 @@
 <div class="wrapper">
-  <h1>Current Project: {{project.title}} with {{project.sprints.length}} sprint/s</h1>
-  <div class="button" (click)="toggleVisibility()" >Add New Sprint</div>
+  <h3>Current Project: {{project?.title}} with {{project?.sprints.length}} sprint/s</h3>
+  <div class="buttons">
+    <img class="back-icon" (click)="backClicked()" src="../assets/back-icon.png">
+    <div class="button" (click)="toggleVisibility()">Add New Sprint</div>
+  </div>
   <div class="sprints">
-    <div *ngIf="sprints.length !== 0; else noSprints">
+    <div *ngIf="sprints?.length !== 0; else noSprints">
       <div class="sprint" *ngFor="let sprint of sprints">
         <div class="sprint-header">
-          <h2>{{sprint.title}}</h2>
+          <h2>{{sprint?.title}}</h2>
           <div class="icons">
-            <img src="../assets/add-icon.png" class="icon" (click)="addSprint()">
+            <img src="../assets/add-icon.png" class="icon" (click)="toggleVisibility2(sprint)">
             <img src="../assets/edit-icon.png" class="icon">
             <img src="../assets/delete-icon.png" class="icon" (click)="removeSprint(sprint.id)">
           </div>
         </div>
-        <p class="description">{{sprint.description}}</p>
-        <app-issues [sprint]="sprint" [project]="project" ></app-issues>
+        <p class="description">{{sprint?.description}}</p>
+        <app-issues [sprint]="sprint" [(project)]="project"></app-issues>
       </div>
     </div>
   </div>
@@ -21,6 +24,10 @@
     <div class="noSprints">No Sprints Yet!</div>
   </ng-template>
 </div>
+
 <div *ngIf="visible" class="form-container">
-    <app-project-form (action)="myValueChange($event);"></app-project-form>
+  <app-project-form (action)="myValueChange($event);"></app-project-form>
+</div>
+<div *ngIf="visible2" class="form-container">
+  <app-issue-form (action)="myValueChange2($event);" [currentSprint]="currentSprint"></app-issue-form>
 </div>

@@ -1,0 +1,19 @@
+.form {
+    padding: 20px;
+}
+
+.icon {
+    width:30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.form-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-control{
+    color:black;
+}
+

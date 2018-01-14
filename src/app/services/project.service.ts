@@ -32,13 +32,19 @@ export class ProjectService {
   }
 
   addSprint(body,id){
-    //TODO:needs changes(not hardcoded user ID, project ID)!
+    //TODO:needs changes(not hardcoded user ID)!
     return this.http.put<any>(`http://localhost:3030/users/007ffovmad/addSprint/${id}`,body);
   }
 
-  editSprint() {
-    //localhost:3030/users/007ffovmad/editSprint/hcr37a0aor
+  editIssue() {
+    //localhost:3030/users/007ffovmad/editIssue/hcr37a0aor
   }
+
+  addIssue(body,id){
+    //TODO:needs changes(not hardcoded user ID)!
+    return this.http.put<any>(`http://localhost:3030/users/007ffovmad/addIssue/${id}`,body);
+  }
+  
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

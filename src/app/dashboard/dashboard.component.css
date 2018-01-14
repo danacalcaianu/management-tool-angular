@@ -25,7 +25,7 @@
     font-size: 1.9em;
     text-align: center;
     padding: 20px;
-    color: #F4F6F0;
+    color: white;
     font-weight: 200;
     border-bottom: 1px  solid rgb(105, 105, 105);
 }
@@ -46,7 +46,17 @@
 }
 
 .sprints {
-    font-size: 1.8em;
+    font-size: 1.2em;
+    text-align: start;
+    padding-top: 20px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+}
+
+.sprint-item{
+    margin-top:10px;
+    color: #9aa3a9;
 }
 
 .noSprints{

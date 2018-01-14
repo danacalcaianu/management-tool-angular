@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../services/index';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-project-details',
   templateUrl: './project-details.component.html',
@@ -9,15 +11,21 @@ import { Router } from '@angular/router';
 })
 export class ProjectDetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private ProjectService:ProjectService, private router: Router,) { }
+  constructor(private location: Location, private route: ActivatedRoute, private ProjectService:ProjectService, private router: Router,) { }
   project;
   sprints;
   issues;
   visible;
+  visible2;
+  currentSprint;
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.getProject(id);
+  }
+  ngOnChanges(changes) {
+    console.log("AICI?!")
+    this.sprints=changes.project.currentValue.sprints;
   }
   getProject(id) {
     this.ProjectService.getProject(id).subscribe(project => {
@@ -34,12 +42,29 @@ export class ProjectDetailsComponent implements OnInit {
     this.visible= !this.visible;
   }
 
+  toggleVisibility2(sprint){
+    this.visible2= !this.visible2;
+    this.currentSprint=sprint;
+
+  }
+
 
   myValueChange($event) {
     if($event !== undefined){
-      this.ProjectService.addSprint($event,this.project.id).subscribe(sprint=>{this.sprints.push(sprint['payload'].sprints)});
+      this.ProjectService.addSprint($event,this.project.id).subscribe(project=>{this.sprints=project['payload'].sprints});
     }
     this.visible=false;
+    }
+
+    myValueChange2($event) {
+      if($event !== undefined){
+        this.ProjectService.addIssue($event,this.project.id).subscribe(project=>{this.project=project['payload']});
+      }
+      this.visible2=false;
+      }
+
+      backClicked() {
+        this.location.back();
     }
 
 }

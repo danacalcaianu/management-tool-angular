@@ -53,7 +53,7 @@
 }
 
 .title{
-    font-size:1.4em;
+    font-size:1.3em;
     border-bottom: 1px solid grey;
     text-align: center;
 }
@@ -68,6 +68,6 @@
 }
 
 .issue-type p:first-of-type{
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-align: center;
 }
