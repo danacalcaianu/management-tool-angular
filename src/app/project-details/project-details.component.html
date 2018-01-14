@@ -1,11 +1,13 @@
 <div class="wrapper">
   <h1>Current Project: {{project.title}} with {{project.sprints.length}} sprint/s</h1>
+  <div class="button" (click)="toggleVisibility()" >Add New Sprint</div>
   <div class="sprints">
-    <div *ngIf="project.sprints.length !== 0; else noSprints">
-      <div class="sprint" *ngFor="let sprint of project.sprints">
+    <div *ngIf="sprints.length !== 0; else noSprints">
+      <div class="sprint" *ngFor="let sprint of sprints">
         <div class="sprint-header">
           <h2>{{sprint.title}}</h2>
           <div class="icons">
+            <img src="../assets/add-icon.png" class="icon" (click)="addSprint()">
             <img src="../assets/edit-icon.png" class="icon">
             <img src="../assets/delete-icon.png" class="icon" (click)="removeSprint(sprint.id)">
           </div>
@@ -18,4 +20,7 @@
   <ng-template #noSprints>
     <div class="noSprints">No Sprints Yet!</div>
   </ng-template>
+</div>
+<div *ngIf="visible" class="form-container">
+    <app-project-form (action)="myValueChange($event);"></app-project-form>
 </div>

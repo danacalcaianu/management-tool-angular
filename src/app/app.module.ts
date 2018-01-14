@@ -13,7 +13,9 @@ import { AuthenticationService, AlertService, UserService,ProjectService} from "
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
-import { IssuesComponent } from './issues/issues.component';
+import { IssuesComponent } from './issues/issues.component';;
+import { ProjectFormComponent } from './project-form/project-form.component';
+import { IssueDetailComponent } from './issue-detail/issue-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { IssuesComponent } from './issues/issues.component';
     DashboardComponent,
     ProjectDetailsComponent,
     IssuesComponent,
+    ProjectFormComponent,
+    IssueDetailComponent,
   ],
   imports: [
     BrowserModule,

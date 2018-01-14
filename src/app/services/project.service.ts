@@ -26,10 +26,20 @@ export class ProjectService {
     return this.http.get<any>(`http://localhost:3030/projects/${ projectId }/getIssuesForSprint/${ sprintId }`);
   }
 
-  addProject(){
-    //not implemented yet!
-    return this.http.get<any>(`http://localhost:3030/users/007ffovmad/addProject`);
+  addProject(body){
+    //TODO: needs changes(not hardcoded user ID)!
+    return this.http.put<any>(`http://localhost:3030/users/007ffovmad/addProject`,body);
   }
+
+  addSprint(body,id){
+    //TODO:needs changes(not hardcoded user ID, project ID)!
+    return this.http.put<any>(`http://localhost:3030/users/007ffovmad/addSprint/${id}`,body);
+  }
+
+  editSprint() {
+    //localhost:3030/users/007ffovmad/editSprint/hcr37a0aor
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.log(`${operation} failed: ${error.message}`);

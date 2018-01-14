@@ -12,7 +12,6 @@ export class DashboardComponent implements OnInit {
 
   projects;
   visible;
-  model={};
 
   ngOnInit() {
     this.getProjects();
@@ -27,9 +26,11 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  addProject() {
-    console.log(this.model)
-    this.ProjectService.addProject().subscribe(project=>console.log(project));
+  myValueChange($event) {
+    if($event !== undefined){
+      this.ProjectService.addProject($event).subscribe(project=>this.projects.push(project['payload']));
+    }
+    this.visible=false;
   }
 
   toggleVisibility(){
