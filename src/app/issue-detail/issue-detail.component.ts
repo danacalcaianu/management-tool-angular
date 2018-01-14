@@ -40,7 +40,7 @@ export class IssueDetailComponent implements OnInit {
 
   myValueChange($event) {
     if($event !== undefined){
-      // this.ProjectService.editIssue($event,this.project.id).subscribe(project=>{this.sprints=project['payload'].sprints});
+      this.ProjectService.editIssue(this.project.id,this.issue.id,$event).subscribe(project=>{location.reload()});
     }
     this.visible=false;
     }

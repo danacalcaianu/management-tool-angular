@@ -20,6 +20,7 @@ export class EditFormComponent implements OnInit {
     this.model.description= this.model.description || this.issue.description;
     this.model.status= this.model.status || this.issue.status;
     this.model.type= this.model.type || this.issue.type;
+    this.model.sprint=this.issue.sprint;
     if(this.model.assignee !== undefined || this.issue.assignee !==undefined ){
       this.model.assignee=this.model.assignee || this.issue.assignee;
     }
