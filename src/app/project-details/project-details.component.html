@@ -1,5 +1,10 @@
 <div class="wrapper">
   <h3>Current Project: {{project?.title}} with {{project?.sprints.length}} sprint/s</h3>
+  <div class="color-map-container">
+    <div class="color-map red">Bug</div>
+    <div class="color-map green">Task</div>
+    <div class="color-map blue">Feature</div>
+  </div>
   <div class="buttons">
     <img class="back-icon" (click)="backClicked()" src="../assets/back-icon.png">
     <div class="button" (click)="toggleVisibility()">Add New Sprint</div>

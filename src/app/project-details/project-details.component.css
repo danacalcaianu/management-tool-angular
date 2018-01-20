@@ -93,3 +93,37 @@ h3,h2,p{
     border:1px solid rgba(255, 255, 255, 0.05);
     border-radius: 10px;
 }
+
+.color-map{
+    width: 70px;
+    height: 20px;
+    text-align: center;
+}
+
+.color-map-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color:rgba(255, 255, 255, 0.63);
+}
+
+.red{
+    background-color: rgba(140, 0, 0, 0.29);
+    border-bottom: 1px solid red;
+    border-left:2px solid red;
+    margin:5px;
+}
+
+.green{
+    background-color: rgba(8, 123, 15, 0.30);
+    border-bottom: 1px solid green;
+    border-left:2px solid green;
+    margin:5px;
+}
+
+.blue{
+    background-color: rgba(15, 19, 126, 0.27);
+    border-bottom: 1px solid blue;
+    border-left:2px solid blue;
+    margin:5px;
+}

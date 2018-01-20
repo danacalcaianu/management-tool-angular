@@ -11,12 +11,12 @@
 
   <div class="form-group">
     <label for="Type">Type</label>
-    <input type="text" class="form-control" name="type" [(ngModel)]="model.type" #type="ngModel" required />
+    <input placeholder="bug/feature/task" type="text" class="form-control" name="type" [(ngModel)]="model.type" #type="ngModel" required />
   </div>
 
   <div class="form-group">
     <label for="Status">Status</label>
-    <input type="text" class="form-control" name="status" [(ngModel)]="model.status" #status="ngModel" required />
+    <input type="text" placeholder="new/in progress/rework/feedback/resolved" class="form-control" name="status" [(ngModel)]="model.status" #status="ngModel" required />
   </div>
 
   <div class="form-group">

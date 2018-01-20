@@ -24,7 +24,6 @@ export class ProjectDetailsComponent implements OnInit {
     this.getProject(id);
   }
   ngOnChanges(changes) {
-    console.log("AICI?!")
     this.sprints=changes.project.currentValue.sprints;
   }
   getProject(id) {
@@ -51,14 +50,22 @@ export class ProjectDetailsComponent implements OnInit {
 
   myValueChange($event) {
     if($event !== undefined){
-      this.ProjectService.addSprint($event,this.project.id).subscribe(project=>{this.sprints=project['payload'].sprints});
+      this.ProjectService.addSprint($event,this.project.id)
+        .subscribe(project=>{this.sprints=project['payload'].sprints},
+        error => {
+            alert(error.statusText)
+        });
     }
     this.visible=false;
     }
 
     myValueChange2($event) {
       if($event !== undefined){
-        this.ProjectService.addIssue($event,this.project.id).subscribe(project=>{this.project=project['payload']});
+        this.ProjectService.addIssue($event,this.project.id)
+          .subscribe(project=>{this.project=project['payload']},
+          error => {
+              alert(error.statusText)
+          });
       }
       this.visible2=false;
       }
