@@ -1,25 +1,29 @@
 <div class="body">
-  <div class="button" (click)="toggleVisibility()" >Add New Project</div>
+  <div class="button" (click)="toggleVisibility()">Add New Project</div>
   <div class="projects-container">
     <div class="project" *ngFor="let project of projects">
-      <a routerLink="/detail/{{project.id}}"><p class="title">Project: {{project.title}}</p></a>
+      <a routerLink="/detail/{{project.id}}">
+        <p class="title">Project: {{project.title}}</p>
+      </a>
       <p class="description">Description: {{project.description}}</p>
       <div class="sprints" *ngIf="project.issues.length !== 0; else noIssues">Issues:
         <p class="sprint-item" *ngFor="let issue of project.issues">-{{issue.title}}</p>
       </div>
       <ng-template #noIssues>
-          <div class="noSprints">No Issues Yet!</div>
+        <div class="noSprints">No Issues Yet!</div>
       </ng-template>
       <div class="sprints" *ngIf="project.sprints.length !== 0; else noSprints">Sprints:
-        <p  class="sprint-item" *ngFor="let sprint of project.sprints">-{{sprint.title}}</p>
+        <p class="sprint-item" *ngFor="let sprint of project.sprints">-{{sprint.title}}</p>
       </div>
       <ng-template #noSprints>
-          <div class="noSprints">No Sprints Yet!</div>
+        <div class="noSprints">No Sprints Yet!</div>
       </ng-template>
     </div>
     <div *ngIf="!projects" class="error">No projects available at the moment.</div>
   </div>
-  <div *ngIf="visible" class="form-container">
+  <div *ngIf="visible" class="form-wrapper">
+    <div *ngIf="visible" class="form-container">
       <app-project-form (action)="myValueChange($event);"></app-project-form>
+    </div>
   </div>
 </div>

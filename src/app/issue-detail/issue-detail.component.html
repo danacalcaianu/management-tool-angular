@@ -3,20 +3,22 @@
     <img class="back icon" (click)="backClicked()" src="../assets/back-icon.png">
     <img class="icon" src="../assets/edit-icon.png" (click)="toggleVisibility()">
   </div>
-  <div>
-    <p>Title: {{issue.title}}</p>
-    <p>Description: {{issue.description}}</p>
-    <p>Status: {{issue.status}}</p>
-    <p>Type: {{issue.type}}</p>
-    <p>Sprint: {{issue.sprint}}</p>
-    <p>Tasks : {{issue.tasks}}</p>
-    <p>Assignee: {{issue.assignee}}</p>
-    <p>Created By: {{issue.createdBy}}</p>
-    <p>Comments: {{issue.comments}}</p>
-    <p>Updated At: {{issue.updatedAt}}</p>
-    <p>Created At: {{issue.createdAt}}</p>
+  <div class="info">
+    <p><span class="field">Title: </span> {{issue.title || "N/A"}}</p>
+    <p><span class="field">Description: </span> {{issue.description || "N/A"}}</p>
+    <p><span class="field">Status: </span>{{issue.status || "N/A"}}</p>
+    <p><span class="field">Type: </span> {{issue.type || "N/A"}}</p>
+    <p><span class="field">Sprint:</span> {{issue.sprint || "N/A"}}</p>
+    <p><span class="field">Tasks :</span> {{issue.tasks || "N/A"}}</p>
+    <p><span class="field">Assignee:</span> {{issue.assignee || "N/A"}}</p>
+    <p><span class="field">Created By:</span> {{issue.createdBy || "N/A"}}</p>
+    <p><span class="field">Comments:</span> {{issue.comments || "N/A"}}</p>
+    <p><span class="field">Updated At: </span>{{issue.updatedAt || "N/A"}}</p>
+    <p><span class="field">Created At: </span>{{issue.createdAt || "N/A"}}</p>
   </div>
 </div>
-<div *ngIf="visible" class="form-container">
+<div *ngIf="visible" class="form-wrapper">
+  <div *ngIf="visible" class="form-container">
     <app-edit-form (action)="myValueChange($event);" [issue]="issue"></app-edit-form>
+  </div>
 </div>

@@ -29,10 +29,13 @@
     <div class="noSprints">No Sprints Yet!</div>
   </ng-template>
 </div>
-
-<div *ngIf="visible" class="form-container">
-  <app-project-form (action)="myValueChange($event);"></app-project-form>
+<div *ngIf="visible" class="form-wrapper">
+  <div *ngIf="visible" class="form-container">
+    <app-project-form (action)="myValueChange($event);" class="form"></app-project-form>
+  </div>
 </div>
-<div *ngIf="visible2" class="form-container">
-  <app-issue-form (action)="myValueChange2($event);" [currentSprint]="currentSprint"></app-issue-form>
+<div *ngIf="visible2" class="form-wrapper">
+  <div *ngIf="visible2" class="form-container">
+    <app-issue-form (action)="myValueChange2($event);" [currentSprint]="currentSprint"></app-issue-form>
+  </div>
 </div>

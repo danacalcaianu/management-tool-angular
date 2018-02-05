@@ -28,24 +28,24 @@ export class ProjectService {
 
   addProject(body){
     //TODO: needs changes(not hardcoded user ID)!
-    return this.http.put<any>(`http://localhost:3030/users/007ffovmad/addProject`,body);
+    return this.http.put<any>(`http://localhost:3030/users/iwl0tbcrkh/addProject`,body);
   }
 
   addSprint(body,id){
     //TODO:needs changes(not hardcoded user ID)!
-    return this.http.put<any>(`http://localhost:3030/users/007ffovmad/addSprint/${id}`,body);
+    return this.http.put<any>(`http://localhost:3030/users/iwl0tbcrkh/addSprint/${id}`,body);
   }
 
   editIssue(projectId,issueId,body) {
     //TODO VERIFY
-    return this.http.put<any>(`http://localhost:3030/users/007ffovmad/${projectId}/editIssue/${issueId}`,body);
-    //localhost:3030/users/007ffovmad/editIssue/hcr37a0aor
-    // `http://localhost:3030/users/007ffovmad/${projectId}/editIssue/${issueId}`
+    return this.http.put<any>(`http://localhost:3030/users/iwl0tbcrkh/${projectId}/editIssue/${issueId}`,body);
+    //localhost:3030/users/iwl0tbcrkh/editIssue/hcr37a0aor
+    // `http://localhost:3030/users/iwl0tbcrkh/${projectId}/editIssue/${issueId}`
   }
 
   addIssue(body,id){
     //TODO:needs changes(not hardcoded user ID)!
-    return this.http.put<any>(`http://localhost:3030/users/007ffovmad/addIssue/${id}`,body);
+    return this.http.put<any>(`http://localhost:3030/users/iwl0tbcrkh/addIssue/${id}`,body);
   }
   
 

@@ -1,4 +1,9 @@
 
+html, body{
+    height:100%;
+  }
+
+
 .wrapper{
     /* padding-top:10px; */
     text-align: center;
@@ -84,7 +89,7 @@ h3,h2,p{
     background-color: #00838F;
 }
 
-.form-container{
+.form-container {
     width: 500px;
     position: fixed;
     top:20%;
@@ -92,6 +97,14 @@ h3,h2,p{
     left:30%;
     border:1px solid rgba(255, 255, 255, 0.05);
     border-radius: 10px;
+}
+
+.form-wrapper {
+    top:0;
+    width:100%;
+    height: 100%;
+    position: fixed;
+    background-color: #000000c5;
 }
 
 .color-map{
