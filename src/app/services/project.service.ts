@@ -27,25 +27,31 @@ export class ProjectService {
   }
 
   addProject(body){
-    //TODO: needs changes(not hardcoded user ID)!
-    return this.http.put<any>(`http://localhost:3030/users/iwl0tbcrkh/addProject`,body);
+    var user = localStorage.getItem("currentUser");
+    var userJson= JSON.parse(user);
+    var userId = userJson.user.id
+    return this.http.put<any>(`http://localhost:3030/users/${userId}/addProject`,body);
   }
 
   addSprint(body,id){
-    //TODO:needs changes(not hardcoded user ID)!
-    return this.http.put<any>(`http://localhost:3030/users/iwl0tbcrkh/addSprint/${id}`,body);
+    var user = localStorage.getItem("currentUser");
+    var userJson= JSON.parse(user);
+    var userId = userJson.user.id
+    return this.http.put<any>(`http://localhost:3030/users/${userId}/addSprint/${id}`,body);
   }
 
   editIssue(projectId,issueId,body) {
-    //TODO VERIFY
-    return this.http.put<any>(`http://localhost:3030/users/iwl0tbcrkh/${projectId}/editIssue/${issueId}`,body);
-    //localhost:3030/users/iwl0tbcrkh/editIssue/hcr37a0aor
-    // `http://localhost:3030/users/iwl0tbcrkh/${projectId}/editIssue/${issueId}`
+    var user = localStorage.getItem("currentUser");
+    var userJson= JSON.parse(user);
+    var userId = userJson.user.id
+    return this.http.put<any>(`http://localhost:3030/users/${userId}/${projectId}/editIssue/${issueId}`,body);
   }
 
   addIssue(body,id){
-    //TODO:needs changes(not hardcoded user ID)!
-    return this.http.put<any>(`http://localhost:3030/users/iwl0tbcrkh/addIssue/${id}`,body);
+    var user = localStorage.getItem("currentUser");
+    var userJson= JSON.parse(user);
+    var userId = userJson.user.id
+    return this.http.put<any>(`http://localhost:3030/users/${userId}/addIssue/${id}`,body);
   }
   
 
